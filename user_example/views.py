@@ -46,6 +46,7 @@ def password_change(request):
         form = UserChangeForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('home')
             
     else:
         form = UserChangeForm()
